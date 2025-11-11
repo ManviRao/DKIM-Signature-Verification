@@ -1,0 +1,445 @@
+Delivered-To: raomanvitha21@gmail.com
+Received: by 2002:a05:7022:982:b0:10d:c374:aa05 with SMTP id bt2csp2144189dlb;
+        Tue, 4 Nov 2025 05:12:04 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFOTV2sI1W8fQi5zXF+ryxAoj2/fXiN0Zb/BQC6DUncdYduAxoV8+uSffjgl+kbvlDZjelm
+X-Received: by 2002:a05:620a:3713:b0:891:ae32:d696 with SMTP id af79cd13be357-8ab9abf8e9dmr1930547185a.66.1762261924130;
+        Tue, 04 Nov 2025 05:12:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762261924; cv=none;
+        d=google.com; s=arc-20240605;
+        b=clmpMgKEP9dZb/TCWJNl+QF/LrIm8LHFf8aaJ1SGCOovoOHASlJI52i0bV0qykCBQ2
+         qP3B5fCKrznRYfKU5ThKfOB2fzw5QlxQXdNScYaH8jVgeDE03I+nV3KM8oO0WX3mIyXt
+         Fkl+/wUbePFV3sgAsZhNwavy862QDAsTxPqQ8K6abOLkKITfk2gLLf/pHPO1rvEY2EBa
+         qVlzUn6XJZvULhqbiBjubASFt1eeQ8XKycpy9HfueBzd9VAfwdeur1OEeZYWOvcfCPlj
+         3m0UkrH6UxpI4FzXjaHrZIGxIaWrS+0e871JqtKEFrkX2YSkj1uUNiT/Ecq1y8Z0fqkA
+         Epww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:mail_type:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=93/K7j+zhE2CMf4QWflpYQAD6lHFU+fe8ywYX8K73tM=;
+        fh=dPVOv5trQsMyjXQvMI3R0uYpC3pwI8u1kTO7aeW8WXQ=;
+        b=GWJ91OCsL/baZ083aoNGkS/9SdCwLmbdhMtXq++bFHz9rrKXQqJowo9hsvhNqvikhv
+         TJis7wxEokt042BYsMvfXttl5UHnmat/l77EjXgkxCQb/+WQCC1J2oRlF/mMK63mRIJy
+         4YSc4BnOfquKZBP7HcsjHBFPA7M9fdPqoMv7NNWGEU0z8dsVGZXCkf7JwobvmE7+bD1D
+         Xwn7KDJnVD+ldQSgGE46mOY0lkZnC+FRCcuukM35YTqrzVuZ3QujwdN/PN2pd7cOCSv5
+         cx88mz9JiF2nrfIIXoZ9s4ng7w7Rn+jxGM3ghete8N5YIO9SdkB3S2zX6LVmajC+YgkD
+         CyOg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e.udemymail.com header.s=s1 header.b=IDDnM1K2;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ZIzPa2Z7;
+       spf=pass (google.com: domain of bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com designates 167.89.104.228 as permitted sender) smtp.mailfrom="bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=udemymail.com
+Return-Path: <bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com>
+Received: from o3.e.udemymail.com (o3.e.udemymail.com. [167.89.104.228])
+        by mx.google.com with ESMTPS id af79cd13be357-8b14892db09si52476185a.1084.2025.11.04.05.12.03
+        for <raomanvitha21@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 04 Nov 2025 05:12:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com designates 167.89.104.228 as permitted sender) client-ip=167.89.104.228;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e.udemymail.com header.s=s1 header.b=IDDnM1K2;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=ZIzPa2Z7;
+       spf=pass (google.com: domain of bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com designates 167.89.104.228 as permitted sender) smtp.mailfrom="bounces+7354-acc8-raomanvitha21=gmail.com@em5702.e.udemymail.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=udemymail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=e.udemymail.com;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=93/K7j+zhE2CMf4QWflpYQAD6lHFU+fe8ywYX8K73tM=;
+	b=IDDnM1K2LDDB3pM0pLpewrO2qnFTKw91SFfNmq+6oi4SkF+QUTPb1F0Iw5zrvZHpHTtl
+	VobIKQ3K79jHwI02Wo4BKktfoAwNgaK7d9pEksLR3hrQ0W/kZrTKBB18gmxEORPemLERPE
+	exSjJZM/KCP5ylqSVvf7Em6XXJ6gZs+hiaZC3zv6RaKu62QKMhXA13tENcok08j2yww+DZ
+	EEHHNsNTwp/vxzpXIyycDCJ1yCBW5lxQ7wTku7vHB+Nc08ERc72/5tN4pP/cr+2kwzYErg
+	tAk4VFugCUkcMdUEd/VLRTzKScBb/t4ieg4DXVYUEF2RPh2DxFFYJGSEzJyq8rVg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=93/K7j+zhE2CMf4QWflpYQAD6lHFU+fe8ywYX8K73tM=;
+	b=ZIzPa2Z72JWBhdYoLLJeley5GKgfCUyls+SUIr8ByH7HrYd9HTGX0DARHUQNNhUO+8Lq
+	huaI07Qm0qhl5DJzeJa0S3A+2nmrkUx8uYpya/f6NeNs+7xhL6WCPq879YKBZ79bJbySIg
+	L1JkVnsGhJk6sXvJRlF0DNDdJKTq7bDxc=
+Received: by recvd-796bfbffd6-f7f6h with SMTP id recvd-796bfbffd6-f7f6h-1-6909FBA2-50
+	2025-11-04 13:12:02.455258387 +0000 UTC m=+13207145.333234291
+Received: from NzM1NA (unknown)
+	by geopod-ismtpd-47 (SG) with HTTP
+	id hNetiWGXRyGSuZ0Jyduceg
+	Tue, 04 Nov 2025 13:12:02.439 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Tue, 04 Nov 2025 13:12:02 +0000 (UTC)
+From: "Udemy Instructor: Faisal Memon (EmbarkX)" <no-reply@e.udemymail.com>
+Mime-Version: 1.0
+Message-ID: <hNetiWGXRyGSuZ0Jyduceg@geopod-ismtpd-47>
+Subject: =?UTF-8?B?8J+OiQ==?= NEW Section: Master Logging + Progress Check-in!
+mail_type: new-course-announcement
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EprZIduz3Hio3jjIVO=2F+qXC84gBjGeSs8=2FrYlQao1oQBr5jwI=2F9xU5l2c3?=
+ =?us-ascii?Q?CUgoOkCJ54rEvPXJvAoUWAkyWVylqWWreHyPaRx?=
+ =?us-ascii?Q?UbNO5ob6+Vn7HpabJlIKDnM6I+HX08fEEQc+SZ3?=
+ =?us-ascii?Q?WzKkZYYaPzs48FquR35byFdfFskkbbg4+w5J5N=2F?=
+ =?us-ascii?Q?B9ho4zoBLXmmhzSraq7Bj=2FotjB=2FGWXQcbh0twYs?=
+ =?us-ascii?Q?BefKagajn4+fUvNzvVhSrO5Pgo=2FyokHJSZ8sCW8?=
+ =?us-ascii?Q?O+SPC1acXIPa0QsKh92V6LoBhA=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BrqrKgkyZOn02mTMKzKBGlgY1w6pBoGzFSZUB?=
+ =?us-ascii?Q?o0bWTZ880NQLt14G6lLXVjrzECj5W3PV3K=2FNZYn?=
+ =?us-ascii?Q?80LkX77dqZCQQzh+8QuaHCzruFMGEuVUleEesKT?=
+ =?us-ascii?Q?Y0talp0JVmL+Gcme9s9CJin+6iUQFCWpGmvuFiE?=
+ =?us-ascii?Q?EAkvJ00u1rl5ERBx99H4jIG921ig4s5ijciiSQG?=
+ =?us-ascii?Q?jTILUYy9wXOeMT8pR=2FPmCx3tTOBienZ5MCIMGRs?=
+ =?us-ascii?Q?e=2FaBobd5Dmsx9I81gFIFwMSWo2yg=2FRnxi6J1wnB?=
+ =?us-ascii?Q?X86qqnZ0tIdB5KU6Sb2K=2FZ2NpTLWbAfZwnnz3Gn?=
+ =?us-ascii?Q?aAIKvZJ4OgbiokTG5cE=2FXbgQGGjCCnCI0=3D?=
+To: raomanvitha21@gmail.com
+X-Entity-ID: u001.+N7Yz+224NaK2LnOd84RFw==
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/htm=
+l4/strict.dtd">
+<html lang=3D"en-us">
+    <head>
+        <meta http-equiv=3D"Content-type" content=3D"text/html; charset=3Du=
+tf-8">
+        <meta name=3D"x-apple-disable-message-reformatting">
+
+        <title>Udemy</title>
+       =20
+       =20
+        <style>
+            #udemy-email img {
+                max-width:100%;
+                height:auto;
+            }
+
+            #udemy-email p {
+                color:#1C1D1F;
+                margin:0 0 8px 0;
+            }
+
+           =20
+            #udemy-email a {
+                color:#5624D0;
+                text-decoration:underline;
+            }
+
+            #udemy-email ul,
+            #udemy-email ol {
+                margin:0 24px 8px 24px;
+                padding:0;
+            }
+
+            #udemy-email li {
+                margin:0 0 4px 0;
+                padding:0 8px;
+            }
+
+            #udemy-email hr {
+                border:0;
+                border-top:1px solid #CCCCCC;
+                margin:16px 0;
+            }
+
+           =20
+        </style>
+    </head>
+    <body style=3D"color:#1C1D1F; margin:0; font-family:'SF Pro Text', -app=
+le-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-s=
+erif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size:1=
+6px; font-weight:400; line-height:1.4;">
+        <table id=3D"udemy-email" width=3D"100%" cellpadding=3D"0" cellspac=
+ing=3D"0" style=3D"background-color:#F7F9FA; padding:24px">
+            <tr>
+                <td>&nbsp;</td>
+                <td width=3D"600">
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" style=3D"background-color:#FFF">
+                       =20
+                            <tr>
+                                <td style=3D"border-bottom:1px solid #CCCCC=
+C;padding:24px">
+                                   =20
+    <p style=3D"margin:0">
+        <b>
+           =20
+                New Educational Announcement
+           =20
+        </b>
+    </p>
+
+                                </td>
+                            </tr>
+                       =20
+                       =20
+                            <tr>
+                                <td style=3D"padding:24px 24px 0 24px">
+                                   =20
+                                    <!-- No greeting -->
+                                   =20
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+        <tr>
+            <td width=3D"48" style=3D"vertical-align:middle">
+                <img src=3D"https://img-c.udemycdn.com/user/50x50/18861496_=
+f672_5.jpg" width=3D"48" alt=3D""
+                     style=3D"border-radius:50%; display:block; object-fit:=
+cover">
+            </td>
+            <td style=3D"padding:0 16px; vertical-align:middle">
+               =20
+                                       =20
+                                            <p style=3D"margin-bottom:0">
+                                                <a href=3D"" style=3D"text-=
+decoration:none; color:#1C1D1F">Hi Manvitha, an announcement has been made =
+from Faisal, instructor of </a><a href=3D"https://e2.udemymail.com/ls/click=
+?upn=3Du001.TtzRjPf63yUg9yrAxgqE78WDKTn6A2iSo8JCeA5RUg-2BxGkWCMUVCw-2Fz-2Bd=
+GUbXTi5faYbtnC7UntbDZf9M7f-2F3E0aU4vy5NYjuzoZ8dssuOO0bO7r9Hrt1HqyU-2F4uK2Gn=
+2lFpVIM-2F2iiV3fXj7GKzZ-2Fp5H-2BcOdqgL9RMejHxdhMEs1-2FE2sEs8tIUHn2l2-2BH6tT=
+BnrTR9X-2BUw6CzYME7zDWh9shHH1NheE-2B-2BtWUvNMT4fGUorSD-2BLIZhQOGf-2FKsJ5kfs=
+4t-2BMRC-2FXdYrAoIGrhj6Q-3D-3DAt_R_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWFd=
+yp41OrtnubXiDUl3jZ0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B7613=
+p-2BhNDGgz1jtdS5m8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhiU=
+IOR90KLCFTsvEaz6VJ7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJEi=
+EN8CP-2Bq55IL-2BY9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7D=
+Fwv-2BIy3-2FVZOJH2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZEE8-2BfRrfPXM8FoOgTcrdm=
+zjS23Nl-2B0aobIo1ln05qOhwwrRh9V2Vdzlqm7JlxCa1CbcDBKMI-2BpJpM-2FKg91sXAc-2Bh=
+9AJYM8-2BqBDvZsFH0j4Pv5AuBRi5SKQRep5TyYe0cX8yhxJY9yIPVpd249CzygPsT9jIR-2BKv=
+5ehuJRNdtWEC0Zw-3D-3D">Java Spring Boot Full Stack: eCommerce Project Maste=
+rclass</a><a href=3D"" style=3D"text-decoration:none; color:#1C1D1F">.</a>
+                                            </p>
+                                       =20
+                                   =20
+            </td>
+        </tr>
+    </table>
+
+                                </td>
+                            </tr>
+                       =20
+
+                       =20
+    <tr><td style=3D"padding:24px 0 0 0"></td></tr>
+    <tr>
+        <td style=3D"border-top:1px solid #CCCCCC; padding:24px 24px 0 24px=
+">
+             <p>Hello Amazing Developers! =F0=9F=91=8B</p><p>I hope you're =
+making great progress on your Full Stack Spring Boot Ecommerce journey! Whe=
+ther you just joined us or you're already deep into building your project, =
+I have some exciting updates to share.</p><p><strong>=F0=9F=86=95 </strong>=
+<a href=3D"https://e2.udemymail.com/ls/click?upn=3Du001.TtzRjPf63yUg9yrAxgq=
+E78WDKTn6A2iSo8JCeA5RUg-2BxGkWCMUVCw-2Fz-2BdGUbXTi5faYbtnC7UntbDZf9M7f-2F3E=
+0aU4vy5NYjuzoZ8dssuONMCB20bwRC06KKxh-2B-2FhACwTgEUq69G2iuWcwDPmY8tnni2fOzyD=
+SAwRfW8AGigm-2FyrHkq3KREekhatE5EYcH-2BFjEcCc8-2Bj7FqVoKHLAhFETKn18rzygIRrnn=
+70FUj2gu2TK-2BhLoN7xB9MooHg5-2FpB4UodFqM-2FEtqEwhPJifw1j8wnd3-2BIYHJzJeTJUc=
+12-2BhOZQhbDVO37Z85UcEG3av-2B6XlR8T_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWF=
+dyp41OrtnubXiDUl3jZ0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B761=
+3p-2BhNDGgz1jtdS5m8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhi=
+UIOR90KLCFTsvEaz6VJ7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJE=
+iEN8CP-2Bq55IL-2BY9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7=
+DFwv-2BIy3-2FVZOJH2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZEE9xA3YtL5-2BYsL6zVfgw=
+dBMAHMeH5Z4FB-2FK0gmAqMgvPfbICwf2PP-2Fg1iPzThTMUrvbMeEiV0ei-2FpJoce60MkcAEu=
+vRZf-2BxHd-2FC1GKqd4JwqVhcsy8GFykiLNRbT2F3N5kJrYlsGoGQCClNQDBUMqUfyAjWz8Rlh=
+U925asQLQ5fc4Q-3D-3D" rel=3D"noopener noreferrer" target=3D"_blank"><strong=
+>Brand New Section Just Added</strong></a><strong>!</strong></p><p>I'm thri=
+lled to announce that <a href=3D"https://e2.udemymail.com/ls/click?upn=3Du0=
+01.TtzRjPf63yUg9yrAxgqE78WDKTn6A2iSo8JCeA5RUg-2BxGkWCMUVCw-2Fz-2BdGUbXTi5fa=
+YbtnC7UntbDZf9M7f-2F3E0aU4vy5NYjuzoZ8dssuONMCB20bwRC06KKxh-2B-2FhACwTgEUq69=
+G2iuWcwDPmY8tnni2fOzyDSAwRfW8AGigm-2FyrHkq3KREekhatE5EYcH-2BFjEcCc8-2Bj7FqV=
+oKHLAhFETKn18rzygIRrnn70FUj2gu2TK-2BhLoN7xB9MooHg5-2FpB4UodFqM-2FEtqEwhPJif=
+w1j8wnd3-2BIYHJzJeTJUc12-2BhOZQhbDVO37Z85UcEG3av-2B6XVdPE_kXm90eWjxFv6-2F9-=
+2Bz5mIcNlWIqOoXGVVPLWFdyp41OrtnubXiDUl3jZ0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo=
+97B7OYQgpNMUNSZX-2B7613p-2BhNDGgz1jtdS5m8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMaf=
+Bnwl2FZgGLF-2FEEbmNzhiUIOR90KLCFTsvEaz6VJ7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfR=
+JhxxyUIx-2BkGqFobwBUJEiEN8CP-2Bq55IL-2BY9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA=
+8RFwGvS8HkiC1Qs-2BRDr7DFwv-2BIy3-2FVZOJH2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZ=
+EE9Ft-2FKf0db9MFJXkmtY1J6ao9rdXfzWC1RFB44u1fdbd187WcsessANPt6UrpgzsYXdwn0yb=
+k31cWIuJNDdI8mCJCFep9-2BaCZxi0rUMrP-2FYAtVP0504T0UJ0civXwCjMFSmAioBtJS9B27G=
+1gn4LjRALPg3vMTw10J0E8ASNx40Cw-3D-3D" rel=3D"noopener noreferrer" target=3D=
+"_blank"><strong>Section 52: TIPS - Master Logging with Spring Boot in Java=
+</strong></a> is now live in the course!</p><p>This bonus section will help=
+ you implement professional-grade logging in your applications. Here's what=
+ you'll learn:</p><p>=E2=9C=85 <strong>What is Logging in Spring Boot?</str=
+ong> - Understand the fundamentals<br>=E2=9C=85 <strong>Logging in Action w=
+ith SLF4J</strong> - See it working in real projects<br>=E2=9C=85 <strong>U=
+nderstanding Different Logging Levels</strong> - When to use DEBUG, INFO, W=
+ARN, ERROR<br>=E2=9C=85 <strong>Using Lombok for Simplified Logging</strong=
+> - Write cleaner code with less boilerplate<br>=E2=9C=85 <strong>Custom Lo=
+g File Names &amp; Formats</strong> - Make logs work YOUR way<br>=E2=9C=85 =
+<strong>Controlling Logging at Package Level</strong> - Fine-tune what gets=
+ logged<br>=E2=9C=85 <strong>Saving Error Logs to a Separate File</strong> =
+- Advanced techniques for production apps</p><p><a href=3D"https://e2.udemy=
+mail.com/ls/click?upn=3Du001.TtzRjPf63yUg9yrAxgqE78WDKTn6A2iSo8JCeA5RUg-2Bx=
+GkWCMUVCw-2Fz-2BdGUbXTi5faYbtnC7UntbDZf9M7f-2F3E0aU4vy5NYjuzoZ8dssuONMCB20b=
+wRC06KKxh-2B-2FhACwTgEUq69G2iuWcwDPmY8tnni2fOzyDSAwRfW8AGigm-2FyrHkq3KREekh=
+atE5EYcH-2BFjEcCc8-2Bj7FqVoKHLAhFETKn18rzygIRrnn70FUj2gu2TK-2BhLoN7xB9MooHg=
+5-2FpB4UodFqM-2FEtqEwhPJifw1j8wnd3-2BIYHJzJeTJUc12-2BhOZQhbDVO37Z85UcEG3av-=
+2B6Xouw0_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWFdyp41OrtnubXiDUl3jZ0Fmqa8aM=
+SD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B7613p-2BhNDGgz1jtdS5m8WEUKcBX1=
+et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhiUIOR90KLCFTsvEaz6VJ7oMjAKkD=
+X7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJEiEN8CP-2Bq55IL-2BY9DS6vnIbV=
+vAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7DFwv-2BIy3-2FVZOJH2w8vXpk08=
+iJletc-2BCRbdVEOm1sis-2BPZEE9CxL8uYuNGC-2Bicn2pKp-2FBLGrv8-2B9ONptjD46xEepq=
+K5pbodif597obDbWWEGzJWWdtIy68ldWWHZeHu8tEVBOQ8BEShedcbx2-2Fl2V-2B943fyFkaFP=
+KghV2XW0OXRxQmSuFR5f024VQa13aC7SBW613OWXrfvW139goaNaZNFHJV-2BQ-3D-3D" rel=
+=3D"noopener noreferrer" target=3D"_blank"><strong>WATCH&nbsp;NOW</strong><=
+/a></p><p><strong>Why is this important?</strong> Logging is crucial for de=
+bugging, monitoring, and maintaining production applications. Employers LOV=
+E seeing proper logging implementation in portfolios!<br></p><p><strong>=F0=
+=9F=93=9A Where Are You in Your Learning Journey?</strong></p><p>For those =
+who recently joined - <strong>Welcome aboard!</strong> =F0=9F=8E=8A Take yo=
+ur time with the fundamentals. Every expert was once a beginner.</p><p>For =
+those tackling the more advanced sections like <strong>Spring Security</str=
+ong> or <strong>Payment Integration</strong> - I know these can be challeng=
+ing, but you're building real, job-ready skills. Keep pushing!<br></p><p><s=
+trong>=F0=9F=92=A1 Quick Motivation Tip</strong></p><p><strong>Progress &gt=
+; Perfection.</strong> Even if you can only dedicate 20-30 minutes a day, t=
+hat's powerful consistency. Small daily actions compound into major skills =
+over time. You've got this! =F0=9F=92=AA<br></p><p><strong>=F0=9F=8E=AF I W=
+ant to Hear from YOU!</strong></p><p>This course is designed to help YOU su=
+cceed, and your feedback helps me create better content.</p><p><strong><br>=
+Please comment below and let me know:</strong></p><p><strong>1=EF=B8=8F=E2=
+=83=A3 Which module/section are you currently working on?</strong></p><p><s=
+trong>2=EF=B8=8F=E2=83=A3 What's ONE concept you'd like me to explain in mo=
+re detail or create additional content around?</strong></p><p>Your answers =
+will help me understand what additional resources, Q&amp;A videos, or bonus=
+ sections would be most valuable to you!<br></p><p><a href=3D"https://e2.ud=
+emymail.com/ls/click?upn=3Du001.TtzRjPf63yUg9yrAxgqE78WDKTn6A2iSo8JCeA5RUg-=
+2BxGkWCMUVCw-2Fz-2BdGUbXTi5faYbtnC7UntbDZf9M7f-2F3E0aU4vy5NYjuzoZ8dssuONMCB=
+20bwRC06KKxh-2B-2FhACwTgEUq69G2iuWcwDPmY8tnni2fOzyDSAwRfW8AGigm-2FyrHkq3KRE=
+ekhatE5EYcH-2BFjEcCc8-2Bj7FqVoKHLAhFETKn18rzygIRrnn70FUj2gu2TK-2BhLoN7xB9Mo=
+oHg5-2FpB4UodFqM-2FEtqEwhPJifw1j8wnd3-2BIYHJzJeTJUc12-2BhOZQhbDVO37Z85UcEG3=
+av-2B6XfLiA_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWFdyp41OrtnubXiDUl3jZ0Fmqa=
+8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B7613p-2BhNDGgz1jtdS5m8WEUKc=
+BX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhiUIOR90KLCFTsvEaz6VJ7oMjA=
+KkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJEiEN8CP-2Bq55IL-2BY9DS6vn=
+IbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7DFwv-2BIy3-2FVZOJH2w8vXp=
+k08iJletc-2BCRbdVEOm1sis-2BPZEE8SrbZLjE42gT1nqXtFwj97ObjT8o17V3ODTX3535AfkN=
+7l8LItCHNflqIbglj7kliwMvhoycwkIkSV5BU1kujWtdvHgxYesohKXdyWkQ3H09WTomE96vpue=
+ed-2FibhOUf3cPr9TM3lK33tTGqckR3GaLN51ySZZiAgbZFQrfeS9-2Bg-3D-3D" rel=3D"noo=
+pener noreferrer" target=3D"_blank"><strong>CONTINUE WATCHING THE COURSE</s=
+trong></a><br><br>Keep coding, keep learning, and remember - every line of =
+code you write is making you a better developer! =F0=9F=9A=80</p><p>Happy L=
+earning!<br>Faisal Memon (EmbarkX.com)</p><p><em>P.S. - Don't forget to che=
+ck out the new Logging section. Even if you're not there yet in the course =
+flow, the concepts are valuable at ANY stage of development!</em></p><p><br=
+></p>
+        </td>
+    </tr>
+
+
+                       =20
+                           =20
+                                <tr>
+                                    <td style=3D"padding:16px 24px 0 24px">
+                                        <a href=3D"https://e2.udemymail.com=
+/ls/click?upn=3Du001.TtzRjPf63yUg9yrAxgqE78WDKTn6A2iSo8JCeA5RUg-2BxGkWCMUVC=
+w-2Fz-2BdGUbXTi5faYbtnC7UntbDZf9M7f-2F3E0aU4vy5NYjuzoZ8dssuOMn2viX12tvCtBJ9=
+ctto3RunHtnZSIirpm7CzzsHm75Ujx3xLKOEt-2FMzke4fe90FVBm98dG4ySDhN68H5wdMC7WCT=
+tCIqnf9vKm7foZxeJbLgr1lwr04-2BXaGS5PU-2FUvyj-2FkpDdtmVT9hSfeEGesFlioufdlgJe=
+Nxiw4-2FlN4qfKzqgCnPvCPcZVnaGcZP7T0ARxmJQBXJyrL0V65-2FV0x6JD-2FOgln-2BdsKj8=
+fyIFPDt9XM8w-3D-3DYDUU_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWFdyp41OrtnubXi=
+DUl3jZ0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B7613p-2BhNDGgz1j=
+tdS5m8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhiUIOR90KLCFTsv=
+Eaz6VJ7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJEiEN8CP-2Bq55I=
+L-2BY9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7DFwv-2BIy3-2F=
+VZOJH2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZEE9dBWlpN1e7yXqRWxX6jdY6FKPRuGmn5dC=
+ouJ246KXsfARRXSzSoh9r93xKzQHCYpLKqcFTiSx5z7BghtZL58lnip0h1-2FXUyfoJ4tXGkghD=
+7JnXvYq4gJZP8eM2IpVWn70Qoa6ONlgrNH4DVCpxSqZgw9aiHXM8kZaouJgXG8hChA-3D-3D" t=
+arget=3D"_blank" style=3D"border:1px solid #CCCCCC; display:inline-block">
+                                            <span style=3D"background:#1C1D=
+1F; color:#FFF; display:inline-block; min-width:80px; border-top:14px solid=
+ #1C1D1F; border-bottom:14px solid #1C1D1F; border-left:12px solid #1C1D1F;=
+ border-right:12px solid #1C1D1F; text-align:center; text-decoration:none; =
+white-space:nowrap; font-family:'SF Pro Display', -apple-system, BlinkMacSy=
+stemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Em=
+oji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size:16px; font-weight:700;=
+ line-height:1.2; letter-spacing:-0.2px">See Announcement</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                           =20
+                       =20
+
+                       =20
+
+                        <tr>
+                            <td style=3D"padding:48px 24px 0 24px">
+                               =20
+                               =20
+                                <p style=3D"font-family:'SF Pro Text', -app=
+le-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Helvetica, Arial, sans-s=
+erif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size:1=
+2px; font-weight:400; line-height:1.4; color:#6A6F73; margin:0">
+                                   =20
+                                        Delivered by Udemy 600 Harrison Str=
+eet, 3rd Floor, San Francisco, CA 94107.
+                                   =20
+                                   =20
+                                       =20
+                                           =20
+                                                You may <a href=3D"https://=
+e2.udemymail.com/ls/click?upn=3Du001.TtzRjPf63yUg9yrAxgqE784Sl2-2FsgijM6MQ9=
+9-2FOiyPKzV7zA3eJ4VlLOXyJuQd8qAOw6Sbh-2BK-2Bf1c4JHPrlMO3M-2BQtaymn9xjlZ20GW=
+MlALq0jTL6cXeNSr7uQEvKOSJN0EDC2TBFIblrpr-2BvaOE-2Bop2WZtWKJINNbWctSAefej-2B=
+HKgOcJ-2FI1CiI2GYkIkDIlek4jStblAJ0DXlw6T3cSqWHNLuPqXbHo7QgnFgRN-2BC-2BszzxK=
+1c4ALNL6Cqo8vpEl7n4lQCZJpyuC4363mSDslDRW5fvY0chDayliMzGbdb8GSjP9QIHeTOx0rlH=
+cdRR7i2Im-2FHtW9TYGN-2FGDd415my8tVB6F0ohn1O-2BgJjiAl6qaja6T8LKxk8f3Iy3fxRdY=
+DRAKhPIfzTNpbdJjMo8regCFq-2Bx5bQZg-2BReduP5cvJu6udQVUaAOKVa-2FTCLlxK6-2BMrm=
+LxqpFmL6qObd3CfVMiidFLkPWrAB5bxHJUEqiddTW2lLaLbYherElDDNRV5xiFt0AxQIHqon2Ol=
+Q0oD2M6D0Zc0ba7vVJ19Ce9vbSCk-3DTIRU_kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWF=
+dyp41OrtnubXiDUl3jZ0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B761=
+3p-2BhNDGgz1jtdS5m8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhi=
+UIOR90KLCFTsvEaz6VJ7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJE=
+iEN8CP-2Bq55IL-2BY9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7=
+DFwv-2BIy3-2FVZOJH2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZEE-2Fpo6OD3B832uo9eu4X=
+h62hHY2KefKwqsC-2BmpU1I4Josh00NsWdoU259WreBspiIviW-2Bk7kiusr2GoziX202TrtRG4=
+FsINOuR3aCjRH-2BN4H3RhKh-2Fsa4lIBHgMQFTIHNgJF1-2B-2BLdzmZjLSCJBbRDU42Md6fSC=
+F-2BkXEmzhA9foQozA-3D-3D" style=3D"color:#6A6F73">unsubscribe</a> if you pr=
+efer not to receive messages like these.
+                                           =20
+                                       =20
+                                   =20
+                                   =20
+                                       =20
+                                           =20
+                                                If something isn't right, p=
+lease <a href=3D"https://e2.udemymail.com/ls/click?upn=3Du001.TtzRjPf63yUg9=
+yrAxgqE74S-2Bxm9OxZeGgCfDPwXiMSI3OfRhkf5IGYRg-2Bk-2BTALQGtAUFaTJcVIOzuPKUvQ=
+wc8tsIC3kgDjyfrz9a1fqu3upjlIVIQ5XaN37JXyqmlZyBcz0CD-2BBw3pa-2FMjWI0-2FuKYL4=
+0nnVrKClv3iu4M2gszx-2F32ilNnWNVGdQ7csUsyg6wkxKlYMJ-2B1kexqQT3O4phRmEK0kOrff=
+8bW0rYBV6Y-2Fbu0FzczRpiS68O5gaxpOIRRDtc1m-2BACEYDO3TA2y-2BQQQiANiaI-2BDiUMq=
+WRANn18F1E-3Dt7-__kXm90eWjxFv6-2F9-2Bz5mIcNlWIqOoXGVVPLWFdyp41OrtnubXiDUl3j=
+Z0Fmqa8aMSD1Zh7jspxzgkpbmEFqUvo-2Bo97B7OYQgpNMUNSZX-2B7613p-2BhNDGgz1jtdS5m=
+8WEUKcBX1et9yJ-2BsdgZ9rHu85tTbGDMafBnwl2FZgGLF-2FEEbmNzhiUIOR90KLCFTsvEaz6V=
+J7oMjAKkDX7Qi1XtarLiqLGEo6LnaQxTHfRJhxxyUIx-2BkGqFobwBUJEiEN8CP-2Bq55IL-2BY=
+9DS6vnIbVvAnSO01Tx7p-2BPN7jutW6wzbA8RFwGvS8HkiC1Qs-2BRDr7DFwv-2BIy3-2FVZOJH=
+2w8vXpk08iJletc-2BCRbdVEOm1sis-2BPZEE88oFTrQux2g7fpUy1dCJFU08IZPBRQxcUVUX1J=
+fHs3iPUMg0I4evoMmN9GLStPGopCRXHU8Tlcx4eo-2Ff8hcCf8HgL16N1fB87WoNFR2LFBgxALZ=
+JMVuzJ8Ds19lH6Kt70lhDX9PCy98wzCob76i5-2BG7VGn4bqzbzWZCuA-2F9FcDhQ-3D-3D" st=
+yle=3D"color:#6A6F73">report abuse</a>.
+                                           =20
+                                       =20
+                                   =20
+                                </p>
+                            </td>
+                        </tr>
+                       =20
+                        <tr>
+                            <td style=3D"padding:24px 0 0 0"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    <img src=3D"https://e2.udemymail.com/wf/open?upn=3Du001.boEsK3G8dOiV9wa=
+C8jO9fl00k0qs3q-2BslF4YiTfMIENY8pMR85GtcG-2FSzGPz1arOQ6whfYkLwecFvGzlGZLFHu=
+I1nAHEDKY0pHJ0TdYlZJ7g-2BaYM7iRkO2C2nAgjZOMHjHGX-2BDhQ3ra0i3cRuxb1O7BXj3IZa=
+E4h96iYqnp56O8Gz8STTmFPb-2BhgzSGOq6gwyM3rI66zPDGqSiF-2F843GV5JfLFAENvItmsiQ=
+4yJSBJPGlugkp5R8lyLS-2Fm9OFHQ8WCIz5NpssyY2rb8BdFPyW01fgVFDTFOmkcAxteS9B-2Bh=
+DQxFBjATxN4G1TcgAYdQy872vrJODEjRYteZflV-2FJf4w-2BtOkoqX-2FOAaswckj6lzlmyl71=
+ukwyv-2FZNQlhr8SZmTZXRNj9XlISngSsMr4DFaFGvD4Ew6tLvLNNFIVEDRhOrIsYvMH6d3tvTq=
+XfwKe1t-2BIm-2BUE5ovyuSV6se3peBFXPANIJ3qnQIIoHY-2FxJhtRd-2F8zTqN4qgv8MlQjy8=
+-2FxmGlkDVlA3-2F6AHEIs-2FLnlxMXqg3-2BMWVtIMwrtEXo94aqPo-3D" alt=3D"" width=
+=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !=
+important;border-width:0 !important;margin-top:0 !important;margin-bottom:0=
+ !important;margin-right:0 !important;margin-left:0 !important;padding-top:=
+0 !important;padding-bottom:0 !important;padding-right:0 !important;padding=
+-left:0 !important;"/></body>
+</html>

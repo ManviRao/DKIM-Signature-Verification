@@ -1,0 +1,99 @@
+Delivered-To: raomanvitha21@gmail.com
+Received: by 2002:a05:7022:698d:b0:fa:b05b:1a04 with SMTP id cj13csp1711659dlb;
+        Thu, 9 Oct 2025 08:32:42 -0700 (PDT)
+X-Received: by 2002:a05:6871:5809:b0:346:865e:d044 with SMTP id 586e51a60fabf-3c0f48c23d6mr3635029fac.11.1760023962379;
+        Thu, 09 Oct 2025 08:32:42 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1760023962; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Q+MhZsyFAdHG+eVgAC0vCgRk/LR9EkVs1pEc0nxPddFc4nSUNuKt4K92sDN79lf41Y
+         SWdnXWAXDRQrrukCPgF7vaeQXXf2AIekUGK8SgxS21vYj0i+vxrEPCQrSyik1PspRwYt
+         9I2tv9xWAQDezbTe4eO7ngQG++Nvu/2rfJc/c0WsNiTq3ipgaorb0dKEI1d+44XjyVO2
+         rUhoIlw+NBkDUn9LxB3HFn0sP+ymYxXdVkoB6E56CycurZ6M05qTmzLdW8PUgqyc/A5L
+         4Cc5TDToXbXH51H30Nm9dWQfz5+ljtL4ypLKAtWnehTr1jbq1t6RZzR58oTPgJj4AjOx
+         0D2w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=OMSHf1H2Y1JEl4xcHJUHCtnhnKp/qLV22/c+y8ZxTZ8=;
+        fh=dPVOv5trQsMyjXQvMI3R0uYpC3pwI8u1kTO7aeW8WXQ=;
+        b=NNljz8elDOlLX5RnieeGuLADw+PMOPZUA7CwdUf8cBzbgQ978URlFN/qqWbH0zxjC9
+         biv4nmgimZJHYxT28dLSv9OKBSvTU6FJEDSl3bMY9YwZBYSBgAmjzaeAnaGqBtJFDW3v
+         VrNY7x079G/0N7+pL20z7YCS1ryORGaKcl0CNh78yfZWEipXpPlUsGas2/VHxpd8NwSk
+         ptmzHYdSKXErgDikCShsE/BeFeeLYnF9LDzSiP0MwVtDb04WIuKiGTl5p2js+jaH4A31
+         St/2vvmbhOWDsrxtF4icNA1PGZjybch5/X3lkotapfqETxYkSP03DXtE0q96vRFkjTro
+         ZHgQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=JSu0fHGc;
+       spf=pass (google.com: domain of manvitharao21@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=manvitharao21@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+Return-Path: <manvitharao21@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 586e51a60fabf-3be84070a91sor1429765fac.0.2025.10.09.08.32.42
+        for <raomanvitha21@gmail.com>
+        (Google Transport Security);
+        Thu, 09 Oct 2025 08:32:42 -0700 (PDT)
+Received-SPF: pass (google.com: domain of manvitharao21@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=JSu0fHGc;
+       spf=pass (google.com: domain of manvitharao21@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=manvitharao21@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com;
+       dara=pass header.i=@gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1760023962; x=1760628762; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=OMSHf1H2Y1JEl4xcHJUHCtnhnKp/qLV22/c+y8ZxTZ8=;
+        b=JSu0fHGcypkXUDFrJsPp3RxadX64d909Z+WqGCWokRvrjdRolw07/ayds1yaIjMkZG
+         QGwkpaMZ64mfXadoA2URbtZEj+xSsza1oyvke6rF/sJwRcMnHZArDgPs/H8Srg3NnS3r
+         +9XqS64lhvcdKJw9shHydSnI42Atc0g5Ngppv/TW4gzOMoh/uSHiXVYPr1VeiPcdGL0V
+         tKWlwbBulRw66rCfxCHtD1ARYEuQVeylIw2t3jA+o/yJkTMdD7xpFZmTZAylHzkKNDvh
+         Ds3AphgCMSyxxeZ4iwxhTGFS/pgGeIVQ0QWh8q2RYGlQUnlig3rVlOKMpuWbIvtImJ25
+         qKNw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1760023962; x=1760628762;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=OMSHf1H2Y1JEl4xcHJUHCtnhnKp/qLV22/c+y8ZxTZ8=;
+        b=Erc4WdOk8EcUuycX6hG097TVUdxriiJS+L7eg+JU4Sqo5euMxc9q66jxJL+md/rH8K
+         gFesaoJ/fmnqQ0bR92YLUcP+mBT+YpfN7KtjfVR6GMsk0nJMr8JcCxaV0mo2+HdUUqib
+         xE2g3w/Ln9hjRkJAvMqSQeqzxWZ9p5ssXs84baCAlmeEHrscmJ9+M33dWISBhmnG4ebI
+         Cui+wJfwwrv+f5lWB1fwK8cL/LIPM10lPIGUmggCkipovBqA7Kg2S4ZRktQbTFpYnM7Q
+         SSoLFGoYgTuzM7SqrnfWHQayC0MPA1uE7de4k0SUQg4sVD3gGkg1OdXLK5Usbb7YlOWw
+         Pakg==
+X-Gm-Message-State: AOJu0YxPdxrLpW8Z0TdlOQdbmo+Dygk7TvnNWiLgAHwaCpdAo97UhTft
+	8B1l9XMCzDmC13VEK51cx7OMFFIFNJobtMZLIwCMlNi92SI5LQg24OE+n7Bq2PIkShjmkcOn9uC
+	uvmEHemi1VK9swTB/fKvp8jvp2iy6BXpvCg==
+X-Gm-Gg: ASbGncuYDFcTlcylIn4xWk0deUcvjTQ8gsHZxxbRyyEp4iZWEO/4vLqc9hkMyNRgRbD
+	YH8/FHINAd5bY55T4lr4VeKZKWSb2KALmUMRezN9UnPpZ+cYEpsaUSpUiuyvp1KaOYUq6OFQ7cE
+	DaB5y120kkWPdpTMJa/e2jou/G10ITRR+A9zFSH/DLjF17QUJ82CYS58Y2S0U1RyDjgsoy/QzMG
+	Oss0tae4KTI0PC+6K3o5h6I7XGuK9cvOEBdTaG4imR0ZE1RNs1+Cg==
+X-Google-Smtp-Source: AGHT+IElkXvUjdDhG0pnZVfj0gBuzuqssUCl3mxpXp4V7ek/XB+9FW2wvkPp/duoqgZacue458aRZHVabQuLxX1U2Zs=
+X-Received: by 2002:a05:6808:e86:b0:441:8f74:f30 with SMTP id
+ 5614622812f47-4418f742072mr1084350b6e.58.1760023961602; Thu, 09 Oct 2025
+ 08:32:41 -0700 (PDT)
+MIME-Version: 1.0
+From: Manvitha Rao <manvitharao21@gmail.com>
+Date: Thu, 9 Oct 2025 21:02:29 +0530
+X-Gm-Features: AS18NWA-27p3l-Y9Q6dK2QL4nvZvh2Y8Ly20bNB8zwmqyvGlO1HQzc0o4VKuKvs
+Message-ID: <CABRHfUsM=ahAMmNHOWB6mQBd=eJ-bO1aJTt=i5Ck7MD+RQ_0yw@mail.gmail.com>
+Subject: 
+To: raomanvitha21@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000070fdb0640bb8375"
+
+--000000000000070fdb0640bb8375
+Content-Type: text/plain; charset="UTF-8"
+
+https://www.hackerearth.com/challenges/new/competitive/star-program-2nd-year-student-training-and-rotation-program-hiring-2025-2026/
+
+--000000000000070fdb0640bb8375
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto"><a href=3D"https://www.hackerearth.com/challenges/new/com=
+petitive/star-program-2nd-year-student-training-and-rotation-program-hiring=
+-2025-2026/">https://www.hackerearth.com/challenges/new/competitive/star-pr=
+ogram-2nd-year-student-training-and-rotation-program-hiring-2025-2026/</a><=
+/div>
+
+--000000000000070fdb0640bb8375--

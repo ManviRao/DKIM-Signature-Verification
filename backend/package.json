@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "type": "module",
   "dependencies": {
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
+    "dns": "^0.2.2",
     "express": "^5.1.0",
     "multer": "^2.0.2",
     "python-shell": "^5.0.0"

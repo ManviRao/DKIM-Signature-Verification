@@ -1,0 +1,411 @@
+Delivered-To: raomanvitha21@gmail.com
+Received: by 2002:a05:7022:3884:b0:10d:c374:aa05 with SMTP id pm4csp201592dlb;
+        Wed, 5 Nov 2025 03:56:31 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IFpl3vS5qdLm5tMemIiXcqRuP/tmAAIRr0jxl3XhN42Lg6taMxNfUaOMF9d1Mwqiz3Nookx
+X-Received: by 2002:a05:6a20:394e:b0:334:9d7d:f255 with SMTP id adf61e73a8af0-34f83b0ff3dmr4293326637.14.1762343790987;
+        Wed, 05 Nov 2025 03:56:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1762343790; cv=none;
+        d=google.com; s=arc-20240605;
+        b=b2i31Ai6bAPMDmt4s+nMwgSSheiuuBxVaKpkAZkO5N6cOLZd2HcVo9/lbYjaaFWy/B
+         jRiUrv+Oh//80E0BogC3zgJWnpvVwLvuCCIkROWRfaeVBqNgd60x5MzNSAhqxHgUpcHA
+         8jZCv9zb7Zix/NbHyRcKLSdIKsWYegX+BAid5m8KMkp6HkWOUP89xKKKktI3CxMtqiF5
+         SZpW33uHYkL1cq7fDyQpiDiLUhmjfVEs3tPNc13tfoifmyCLoi5BjAAPtHHKrL0Y4wna
+         N7r2iJKKcF+VFr0/5gLcKsZC+euk89j900pGD3eYnngkUQkK2lFe417U4RYcBMQpCAvn
+         tJMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:function:content-transfer-encoding:mime-version:subject
+         :message-id:to:from:date:dkim-signature:dkim-signature;
+        bh=imG7rB+7j5gEcDXxqzvyfcjPcedI34EovmyOGcWiayw=;
+        fh=dPVOv5trQsMyjXQvMI3R0uYpC3pwI8u1kTO7aeW8WXQ=;
+        b=PUj1ovVyrseOXaccWyJM5CwWEywmGZ7+1EDO59nJKm3MpAe3gukqhJ5JxNlL9cqCQ+
+         Hs9ievfFZITO8/QL873Wg2VqJAoaJSHwE5i1RMhfscLWj0uXdI//LgYwWV9g1RsB1F1Q
+         +LvTOj/dP2sIV9RM7xToR6UhJV9hTtEgWVp6Izufg1HW2/FFFxEGzPgI5PW2ERArKOWe
+         xVNdN/RUb1YZxkKs25vPkyCpGyL6dOhy+1zkMjLRcvCNlrShFdd7irhSNfsXsn/yf7Nv
+         Fk4lmYWQ5UrJ387AP29WTkVxhEbNk2TJyYsYa+zckPr2Ul5KfRPQwqeK79i4KNQH31/P
+         qPvQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@scaler.com header.s=cyylh4vv7fj2ertpwexyvnvyj2ct3poz header.b=ZtHtafet;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=FXSRNHvT;
+       spf=pass (google.com: domain of 0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com designates 54.240.27.146 as permitted sender) smtp.mailfrom=0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=scaler.com
+Return-Path: <0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com>
+Received: from a27-146.smtp-out.us-west-2.amazonses.com (a27-146.smtp-out.us-west-2.amazonses.com. [54.240.27.146])
+        by mx.google.com with ESMTPS id d2e1a72fcca58-7a993ebfa0bsi7037441b3a.974.2025.11.05.03.56.30
+        for <raomanvitha21@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Wed, 05 Nov 2025 03:56:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com designates 54.240.27.146 as permitted sender) client-ip=54.240.27.146;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@scaler.com header.s=cyylh4vv7fj2ertpwexyvnvyj2ct3poz header.b=ZtHtafet;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=FXSRNHvT;
+       spf=pass (google.com: domain of 0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com designates 54.240.27.146 as permitted sender) smtp.mailfrom=0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=scaler.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=cyylh4vv7fj2ertpwexyvnvyj2ct3poz; d=scaler.com; t=1762343790;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=6+EvIRqW2pJohArQhxFsvunnOYN6FaM458P4h2RXxcM=;
+	b=ZtHtafetciBGFx5TE8UOoXkC/vo+b/WKxaUgOXik20eE03IGzO1BR/wkL6bVlF0r
+	TomPyJP+lTAA8T9qXUdK+yTrRHzVZutrpiBC4RtL7kQ7PmJVUfQ6zb+o82b4FRAQQDZ
+	duePpQ41iKBpxRzmXY+xHa1QWJOdeF32SWDMuh1Q=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1762343790;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=6+EvIRqW2pJohArQhxFsvunnOYN6FaM458P4h2RXxcM=;
+	b=FXSRNHvToTuam59kegxwsF0+gTcPysjKO/GsA+w1dgXVBTPqh67ckfWlO+bG+hgX
+	QtEz3P7xYKpneuQ4jqfhNYavcB5MRWWKZuy9tuq+BOKqSa//7Tf93Wum/K1LUgRpxgK
+	5WAXUSSj2DBpSapo11scl4vDRGd5mI3Vbqy+Bob4=
+Date: Wed, 5 Nov 2025 11:56:30 +0000
+From: Scaler Placements <placements@scaler.com>
+To: raomanvitha21@gmail.com
+Message-ID: <0101019a53e0277a-55cf1502-0534-4673-9507-4911704816a6-000000@us-west-2.amazonses.com>
+Subject: Scaler Career fair: Fast-Track to Razorpay, Swiggy and many more!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_690b3b6e5647c_8433ff3958275582425086"
+Content-Transfer-Encoding: 7bit
+function: send_mail_from_portal_v2
+Feedback-ID: ::1.us-west-2.4IL1RMe5cbhTVyuZ1E+SrtEWnVH+uXsPDFDsKRbi/so=:AmazonSES
+X-SES-Outgoing: 2025.11.05-54.240.27.146
+
+
+----==_mimepart_690b3b6e5647c_8433ff3958275582425086
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+-----------
+Hi Learner,
+-----------
+
+Exciting news! Several of our top hiring partners =E2=80=94 including
+HSBC, Indium, Fractal, Meesho, Swiggy, Flipkart, and many others
+=E2=80=94 are gearing up for major hiring drives in the coming months.
+
+They=E2=80=99re actively seeking skilled candidates across Java,
+JavaScript, Python and SQL roles.
+
+To help you get a head start, we=E2=80=99re hosting Scaler Career Fair =E2=
+=80=94
+an exclusive offline pre-assessment event designed in
+collaboration with leading employers.
+
+By clearing this round, you=E2=80=99ll gain fast-track referral status,
+giving your profile priority visibility when these roles open up.
+
+Online shortlisting process
+
+* Attempt each round within a flexible time window
+* Proctored process
+
+Assessment Tracks
+
+* DSA Round (Coding): Mandatory for all participants
+* Language Tracks (Machine Coding): Choose one =E2=80=94 Java /
+JavaScript / Python (Not applicable to SQL)
+* AI Mock Interviews: For participants who clear the above
+rounds.
+
+Useful Links
+
+* Confirm Your Participation: =F0=9F=91=89Register Here =
+
+( https://www.scaler.com/ahoy/messages/52WX2DNf0PhQMERgCVGkErexeIa45oJh/c=
+lick?signature=3D1668146e89494d7fdcf5c79ee96989a4fec3989f&url=3Dhttps%3A%=
+2F%2Fwww.scaler.com%2Fpartnerships%2Fscaler-career-fair )
+
+
+* Deadline: 7th November
+
+* Support - exam-support@scaler.com
+
+Why You Shouldn=E2=80=99t Miss This:
+
+* Clearing Scaler Career fair gives you a significant advantage
+in upcoming hiring drives.
+
+* Your profile will be among the first reviewed by employers.
+We highlight to employers that you=E2=80=99ve cleared an evaluation
+designed in consultation with them and earned a Careers fair
+Badge.
+
+* Your badge and fast-track status remain valid for 90 days,
+across multiple upcoming drives.
+
+Best regards,
+Team Scaler Careers
+
+Click here to unsubscribe =
+
+( https://www.scaler.com/ahoy/messages/52WX2DNf0PhQMERgCVGkErexeIa45oJh/c=
+lick?signature=3D419c54f85fa0114bd390bf3b9024ee9d8b07ff25&url=3Dhttps%3A%=
+2F%2Fwww.scaler.com%2Fsettings%23notifications )=
+
+----==_mimepart_690b3b6e5647c_8433ff3958275582425086
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.o=
+rg/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns=3D"http://www.w3.org/1=
+999/xhtml">
+    <head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8" =
+/>
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width" />
+    </head>
+    <body>
+        =
+
+  <h2 dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bot=
+tom: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif;=
+ color: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style:=
+ normal; font-variant: normal; text-decoration: none; vertical-align: bas=
+eline; white-space: pre-wrap;">Hi Learner,</span></h2>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">Exciting news! Several of our top hiring part=
+ners =E2=80=94 including </span><span style=3D"font-size: 11pt; font-fami=
+ly: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-wei=
+ght: bold; font-style: normal; font-variant: normal; text-decoration: non=
+e; vertical-align: baseline; white-space: pre-wrap;">HSBC, Indium, Fracta=
+l, Meesho, Swiggy, Flipkar</span><span style=3D"font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-we=
+ight: 400; font-style: normal; font-variant: normal; text-decoration: non=
+e; vertical-align: baseline; white-space: pre-wrap;">t, and many others =E2=
+=80=94 are gearing up for major hiring drives in the coming months.</span=
+><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #1=
+d1c1d; background-color: #ffffff; font-weight: 400; font-style: normal; f=
+ont-variant: normal; text-decoration: none; vertical-align: baseline; whi=
+te-space: pre-wrap;"><br /></span></p>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">They=E2=80=99re actively seeking skilled cand=
+idates across</span><span style=3D"font-size: 11pt; font-family: Arial,sa=
+ns-serif; color: #1d1c1d; background-color: #ffffff; font-weight: bold; f=
+ont-style: normal; font-variant: normal; text-decoration: none; vertical-=
+align: baseline; white-space: pre-wrap;"> Java, JavaScript, Python and SQ=
+L roles</span><span style=3D"font-size: 11pt; font-family: Arial,sans-ser=
+if; color: #1d1c1d; background-color: #ffffff; font-weight: 400; font-sty=
+le: normal; font-variant: normal; text-decoration: none; vertical-align: =
+baseline; white-space: pre-wrap;">.</span><span style=3D"font-size: 11pt;=
+ font-family: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff=
+; font-weight: 400; font-style: normal; font-variant: normal; text-decora=
+tion: none; vertical-align: baseline; white-space: pre-wrap;"><br /><br /=
+></span></p>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">To help you get a head start, we=E2=80=99re h=
+osting </span><span style=3D"font-size: 11pt; font-family: Arial,sans-ser=
+if; color: #1d1c1d; background-color: #ffffff; font-weight: bold; font-st=
+yle: normal; font-variant: normal; text-decoration: none; vertical-align:=
+ baseline; white-space: pre-wrap;">Scaler Career Fair</span><span style=3D=
+"font-size: 11pt; font-family: Arial,sans-serif; color: #1d1c1d; backgrou=
+nd-color: #ffffff; font-weight: 400; font-style: normal; font-variant: no=
+rmal; text-decoration: none; vertical-align: baseline; white-space: pre-w=
+rap;"> =E2=80=94 an exclusive offline pre-assessment event designed in co=
+llaboration with leading employers.</span><span style=3D"font-size: 11pt;=
+ font-family: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff=
+; font-weight: 400; font-style: normal; font-variant: normal; text-decora=
+tion: none; vertical-align: baseline; white-space: pre-wrap;"><br /></spa=
+n></p>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">By clearing this round, you=E2=80=99ll gain f=
+ast-track referral status, giving your profile priority visibility when t=
+hese roles open up.</span></p>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;"><br /></span><span style=3D"font-size: 11pt; =
+font-family: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff;=
+ font-weight: 400; font-style: normal; font-variant: normal; text-decorat=
+ion: none; vertical-align: baseline; white-space: pre-wrap;">Online short=
+listing process</span></p>
+<ul>
+<li dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-botto=
+m: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-famil=
+y: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">Attempt each round wit=
+hin a flexible time window</span></li>
+<li dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-botto=
+m: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-famil=
+y: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">Proctored process</spa=
+n></li>
+</ul>
+<p><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: =
+#1d1c1d; background-color: #ffffff; font-weight: 400; font-style: normal;=
+ font-variant: normal; text-decoration: none; vertical-align: baseline; w=
+hite-space: pre-wrap;">Assessment Tracks</span></p>
+<ul>
+<li dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-botto=
+m: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-famil=
+y: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">=C2=A0DSA Round (Codin=
+g): Mandatory for all participants</span></li>
+<li dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-botto=
+m: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-famil=
+y: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">=C2=A0Language Tracks =
+(Machine Coding): Choose one =E2=80=94 Java / JavaScript / Python (Not ap=
+plicable to SQL)</span></li>
+<li dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-botto=
+m: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-famil=
+y: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weig=
+ht: 400; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">=C2=A0AI Mock Intervie=
+ws: For participants who clear the above rounds.=C2=A0</span></li>
+</ul>
+<p><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: =
+#1d1c1d; background-color: #ffffff; font-weight: 400; font-style: normal;=
+ font-variant: normal; text-decoration: none; vertical-align: baseline; w=
+hite-space: pre-wrap;">Useful Links</span></p>
+<ul>
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: bold; font-style: normal; font-variant: normal; text-decoration=
+: none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: bold; font-style: normal; font-variant: normal; text-decoration: none;=
+ vertical-align: baseline; white-space: pre-wrap;">Confirm Your Participa=
+tion: =F0=9F=91=89Register </span><a style=3D"text-decoration: none;" hre=
+f=3D"https://www.scaler.com/ahoy/messages/52WX2DNf0PhQMERgCVGkErexeIa45oJ=
+h/click?signature=3D1668146e89494d7fdcf5c79ee96989a4fec3989f&amp;url=3Dht=
+tps%3A%2F%2Fwww.scaler.com%2Fpartnerships%2Fscaler-career-fair"><span sty=
+le=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #1155cc; bac=
+kground-color: #ffffff; font-weight: bold; font-style: normal; font-varia=
+nt: normal; text-decoration: underline; -webkit-text-decoration-skip: non=
+e; text-decoration-skip-ink: none; vertical-align: baseline; white-space:=
+ pre-wrap;">Here</span></a></p>
+</li>
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: bold; font-style: normal; font-variant: normal; text-decoration=
+: none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: 400; font-style: normal; font-variant: normal; text-decoration: none; =
+vertical-align: baseline; white-space: pre-wrap;">Deadline:</span><span s=
+tyle=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #1d1c1d; b=
+ackground-color: #ffffff; font-weight: bold; font-style: normal; font-var=
+iant: normal; text-decoration: none; vertical-align: baseline; white-spac=
+e: pre-wrap;"> 7th November=C2=A0</span></p>
+</li>
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: 400; font-style: normal; font-variant: normal; text-decoration:=
+ none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: 400; font-style: normal; font-variant: normal; text-decoration: none; =
+vertical-align: baseline; white-space: pre-wrap;">Support - exam-support@=
+scaler.com</span></p>
+</li>
+</ul>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">Why You Shouldn=E2=80=99t Miss This: </span><=
+span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #1d1=
+c1d; background-color: #ffffff; font-weight: 400; font-style: normal; fon=
+t-variant: normal; text-decoration: none; vertical-align: baseline; white=
+-space: pre-wrap;"><br /></span></p>
+<ul style=3D"margin-top: 0; margin-bottom: 0; padding-inline-start: 48px;=
+">
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: 400; font-style: normal; font-variant: normal; text-decoration:=
+ none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: 400; font-style: normal; font-variant: normal; text-decoration: none; =
+vertical-align: baseline; white-space: pre-wrap;">Clearing Scaler Career =
+fair gives you a significant advantage in upcoming hiring drives.</span><=
+/p>
+</li>
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: 400; font-style: normal; font-variant: normal; text-decoration:=
+ none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: 400; font-style: normal; font-variant: normal; text-decoration: none; =
+vertical-align: baseline; white-space: pre-wrap;">Your profile will be am=
+ong the first reviewed by employers.</span><span style=3D"font-size: 11pt=
+; font-family: Arial,sans-serif; color: #1d1c1d; background-color: #fffff=
+f; font-weight: 400; font-style: normal; font-variant: normal; text-decor=
+ation: none; vertical-align: baseline; white-space: pre-wrap;"><br /></sp=
+an><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: =
+#1d1c1d; background-color: #ffffff; font-weight: 400; font-style: normal;=
+ font-variant: normal; text-decoration: none; vertical-align: baseline; w=
+hite-space: pre-wrap;">We highlight to employers that you=E2=80=99ve clea=
+red an evaluation designed in consultation with them and earned a </span>=
+<span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #1d=
+1c1d; background-color: #ffffff; font-weight: bold; font-style: normal; f=
+ont-variant: normal; text-decoration: none; vertical-align: baseline; whi=
+te-space: pre-wrap;">Careers fair Badge.</span></p>
+</li>
+<li dir=3D"ltr" style=3D"list-style-type: disc; font-size: 11pt; font-fam=
+ily: Arial,sans-serif; color: #1d1c1d; background-color: transparent; fon=
+t-weight: 400; font-style: normal; font-variant: normal; text-decoration:=
+ none; vertical-align: baseline; white-space: pre;" aria-level=3D"1">
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;" role=3D"presentation"><span style=3D"font-size: 11pt; font-family=
+: Arial,sans-serif; color: #1d1c1d; background-color: #ffffff; font-weigh=
+t: 400; font-style: normal; font-variant: normal; text-decoration: none; =
+vertical-align: baseline; white-space: pre-wrap;">Your badge and fast-tra=
+ck status remain valid for 90 days, across multiple upcoming drives.</spa=
+n><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; color: #=
+1d1c1d; background-color: #ffffff; font-weight: 400; font-style: normal; =
+font-variant: normal; text-decoration: none; vertical-align: baseline; wh=
+ite-space: pre-wrap;"><br /><br /></span></p>
+</li>
+</ul>
+<p dir=3D"ltr" style=3D"line-height: 1.38; margin-top: 0pt; margin-bottom=
+: 0pt;"><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">Best regards,</span><span style=3D"font-size:=
+ 11pt; font-family: Arial,sans-serif; color: #1d1c1d; background-color: #=
+ffffff; font-weight: 400; font-style: normal; font-variant: normal; text-=
+decoration: none; vertical-align: baseline; white-space: pre-wrap;"><br /=
+></span><span style=3D"font-size: 11pt; font-family: Arial,sans-serif; co=
+lor: #1d1c1d; background-color: #ffffff; font-weight: 400; font-style: no=
+rmal; font-variant: normal; text-decoration: none; vertical-align: baseli=
+ne; white-space: pre-wrap;">Team Scaler Careers</span></p>
+
+        <br /> <br />
+        <span style=3D"display: block; text-align: center;">
+            <a href=3D"https://www.scaler.com/ahoy/messages/52WX2DNf0PhQM=
+ERgCVGkErexeIa45oJh/click?signature=3D419c54f85fa0114bd390bf3b9024ee9d8b0=
+7ff25&amp;url=3Dhttps%3A%2F%2Fwww.scaler.com%2Fsettings%23notifications">=
+Click here to unsubscribe</a>
+        </span>
+    <img alt=3D"" src=3D"https://www.scaler.com/ahoy/messages/52WX2DNf0Ph=
+QMERgCVGkErexeIa45oJh/open.gif" width=3D"1" height=3D"1" />
+</body>
+</html>
+
+----==_mimepart_690b3b6e5647c_8433ff3958275582425086--
